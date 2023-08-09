@@ -12,7 +12,7 @@
         <div
           class="hero-div flex-grow border rounded-3xl overflow-hidden relative flex flex-col bg-opacity-50 bg-slate-50 h-full"
         >
-          <div style="background-image: url(./../assets/clouds-49520_1920.jpg)">
+          <div style="background-image: url(./../assets/clouds-49520_1920.jpg);  background-repeat: no-repeat; background-size: cover;">
             <header class="absolute inset-x-0 top-0 z-50">
               <nav
                 class="flex items-center justify-between p-3 lg:px-8"
@@ -114,7 +114,7 @@
               <div class="lg:hidden" role="dialog" aria-modal="true">
                 <!-- Background backdrop, show/hide based on slide-over state. -->
                 <div class="fixed inset-0 z-50"></div>
-                <div
+                <div id="modalContainer"
                   class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
                 >
                   <div class="flex items-center justify-between">
@@ -126,7 +126,7 @@
                         alt=""
                       />
                     </a>
-                    <button
+                    <button id="closeModalButton"
                       type="button"
                       class="-m-2.5 rounded-md p-2.5 text-gray-700"
                     >
@@ -216,7 +216,7 @@
               </div>
               <div
                 class="col-span-1 hero-content-2 flex items-center flex-end text-right"
-                style="margin-left: 80%"
+                style="margin-left: 83%"
               >
               <div class="nav-links font-bold">
                 <ul>
@@ -331,6 +331,19 @@
         }
         // start the text animation
         StartTextAnimation(0);
+      });
+      //const openModalButton = document.getElementById('openModalButton');
+      const closeModalButton = document.getElementById('closeModalButton');
+      const modalContainer = document.getElementById('modalContainer'); // Get the modal container by ID
+
+      /*openModalButton.addEventListener('click', () => {
+        modalContainer.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      });*/
+
+      closeModalButton.addEventListener('click', () => {
+        modalContainer.classList.add('hidden');
+        document.body.style.overflow = 'auto';
       });
     </script>
   </body>
