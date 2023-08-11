@@ -124,26 +124,26 @@
               <div class="max-w-2xl py-32 sm:py-40 lg:py-40">
                 <div class="hidden sm:mb-8 sm:flex"></div>
                 <div class="text-left transition-all duration-500 ease-in-out">
-                  <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                  <h1 class="text-4xl font-bold tracking-tight text-gray-100 sm:text-6xl">
                     Algorithm Alley
                   </h1>
-                  <p class="mt-2 text-lg leading-8 text-gray-800">
+                  <p class="mt-2 text-lg leading-8 text-gray-100 font-bold">
                     Join the most vibrant and dynamic tech community on the
                     web. Whether you're
                   </p>
                 </div>
-                <div class="text-gray-600">
+                <div class="text-black">
                   <h2 class="text-4xl">
                     <span class="border-r-2 border-white animate-caret"></span>
                   </h2>
-                  <p class="mt-1 text-lg leading-8 text-gray-800">
+                  <p class="mt-1 text-lg leading-8 font-bold text-gray-100">
                     Algorithm Alley is the right place for you.
                   </p>
                 </div>
               </div>
             </div>
             <div class="col-span-1 hero-content-2 flex items-center flex-end text-right" style="margin-left: 80%">
-              <div class="nav-links font-bold">
+              <div class="nav-links font-bold text-gray-100">
                 <ul>
                   <li class="transition duration-300 ease-in-out transform hover:translate-x-1 hover:text-blue-500">
                     <a href="#">Home</a>
@@ -215,21 +215,22 @@
       
           <div class="ag-courses_item">
             <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Competitive Programming "we aim to be the best community for that"&#160;2023"
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Start:
-                <span class="ag-courses-item_date">
-                  01.08.2023
-                </span>
-              </div>
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                    Loading<span id="loading-dots">...</span>
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                    Start:
+                    <span class="ag-courses-item_date">
+                        01.08.2023
+                    </span>
+                </div>
             </a>
-          </div>
-      
+        </div>
+        
+        
         </div>
       </div>
   </section>
@@ -283,6 +284,19 @@
       // start the text animation
       StartTextAnimation(0);
     });
+
+//loading animation
+function animateDots() {
+    const dotsElement = document.getElementById("loading-dots");
+    let dots = 1;
+
+    setInterval(function () {
+        dots = (dots % 4) + 1;
+        dotsElement.innerHTML = ".".repeat(dots);
+    }, 500); // Adjust the interval to control the animation speed
+}
+
+animateDots();
 
  
   </script>
