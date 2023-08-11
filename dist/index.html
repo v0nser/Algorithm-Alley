@@ -168,11 +168,15 @@
       </div>
     </section>
     <section class="py-8">
-      <marquee width="100%" direction="left">
-        <font class="text-9xl font-extrabold text-blue-400">
-          Embracing Excellence, Empowering Innovations, and Elevating Tech Enthusiasts Worldwide.
-        </font>
-      </marquee>
+      <div class="marquee">
+        <div class="track">
+          <div class="content text-9xl text-blue-400 font-extrabold">&nbsp;Embracing Excellence, Empowering Innovations, and Elevating Tech Enthusiasts Worldwide.     Embracing Excellence, Empowering Innovations, and Elevating Tech Enthusiasts Worldwide. 
+            Embracing Excellence, Empowering Innovations, and Elevating Tech Enthusiasts Worldwide.
+            Embracing Excellence, Empowering Innovations, and Elevating Tech Enthusiasts Worldwide.
+          </div>
+        </div>
+      </div>
+         
     </section>
     <!--sessions section starts-->
     <section class="py-8 px-4">
@@ -293,7 +297,7 @@ function animateDots() {
     setInterval(function () {
         dots = (dots % 4) + 1;
         dotsElement.innerHTML = ".".repeat(dots);
-    }, 500); // Adjust the interval to control the animation speed
+    }, 500); 
 }
 
 animateDots();
