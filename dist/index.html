@@ -13,7 +13,8 @@
     <section class="hero py-5 px-4">
       <div
         class="hero-div flex-grow border rounded-3xl overflow-hidden relative flex flex-col bg-opacity-50 bg-slate-50 h-full">
-        <div class="w-full bg-gradient-to-b from-indigo-400 via-indigo-300 to-indigo-200 ">          <header class="absolute inset-x-0 top-0 z-50">
+        <div class="w-full bg-gradient-to-b from-indigo-400 via-indigo-300 to-indigo-200 "> 
+           <header class="absolute inset-x-0 top-0 z-50">
             <nav class="flex items-center justify-between p-3 lg:px-8" aria-label="Global">
               <div class="flex lg:flex-1">
                 <a href="#" class="-m-1.5 p-1.5">
@@ -33,7 +34,7 @@
                 </button>
               </div>
               <div
-                class="hidden lg:flex lg:gap-x-12 mr-48 bg-slate-200 rounded-full place-content-center w-2/5 justify-center items-center h-12">
+                class="hidden lg:flex lg:gap-x-12 mr-96 bg-slate-200 rounded-full place-content-center w-2/5 justify-center items-center h-12">
                 <a href="#" class="text-sm font-semibold leading-6 text-gray-900 link-animation">
                   About Us
                 </a>
@@ -47,17 +48,12 @@
                   Contact Us
                 </a>
               </div>
-              <div
-                class="hidden lg:inline-flex lg:justify-end bg-slate-200 rounded-full items-center py-2 px-4 mt-4 mr-10 lg:mt-0 transition-transform duration-300 ease-in-out transform hover:scale-110">
-                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Become a member <span
-                    aria-hidden="true">&rarr;</span></a>
-              </div>
+              <div class="header-actions">
+                <div class="bcm hover-slide-right relative bg-slate-200 rounded-full items-center py-2 px-4 mt-4 mr-20 lg:mt-0 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                  <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Become a member <span aria-hidden="true">&rarr;</span></a>
+                </div>
               <div>
-                <button
-                class="btn1 absolute top-1/4 right-2.5 menu-button w-12 h-12 rounded-full bg-white bg-opacity-40 flex items-center justify-center
-                        transition-transform duration-300 ease-in-out transform hover:scale-110"
-                onclick="openMobileMenu()">
-                  <div
+                <button class="btn1 absolute -mt-11 ml-44 menu-button w-12 h-12 rounded-full bg-white bg-opacity-40 flex items-center justify-center transition-transform duration-300 ease-in-out transform hover:scale-110" onclick="openMobileMenu()">                  <div
                     class="button-block relative w-18 h-14 right-3 top-3 z-30 rounded-full bg-white bg-opacity-40 flex items-center justify-center">
                     <span
                       class="absolute top-0 left-0 w-4 h-1 bg-white transition-all duration-400 ease-in-out delay-300"
@@ -74,6 +70,7 @@
                       style="border-radius: 2px; left: 1.5px; top: 32%"></span>
                   </div>
                 </button>
+              </div>
               </div>
             </nav>
             <!-- Mobile menu, show/hide based on menu open state. -->
@@ -167,7 +164,7 @@
         </div>
       </div>
     </section>
-    <section class="py-8">
+    <section class="py-6">
       <div class="marquee">
         <div class="track">
           <div class="content text-9xl text-blue-400 font-extrabold">&nbsp;Embracing Excellence, Empowering Innovations, and Elevating Tech Enthusiasts Worldwide.     Embracing Excellence, Empowering Innovations, and Elevating Tech Enthusiasts Worldwide. 
@@ -222,7 +219,8 @@
                 <div class="ag-courses-item_bg"></div>
         
                 <div class="ag-courses-item_title">
-                    Loading<span id="loading-dots">...</span>
+                  Stay tuned and notified for more exciting sessions.
+                    More to onboard<span id="loading-dots">...</span>
                 </div>
         
                 <div class="ag-courses-item_date-box">
@@ -301,6 +299,30 @@ function animateDots() {
 }
 
 animateDots();
+
+
+//bcm and btn1 class
+document.addEventListener("DOMContentLoaded", function () {
+  const headerActions = document.querySelector(".header-actions");
+  const headerHeight = document.querySelector("header").offsetHeight;
+  let isSticky = false;
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > headerHeight) {
+      if (!isSticky) {
+        headerActions.style.position = "fixed";
+        headerActions.style.top = "0";
+        headerActions.style.transform = "none";
+        isSticky = true;
+      }
+    } else {
+      headerActions.style.position = "absolute";
+      headerActions.style.top = "50%";
+      headerActions.style.transform = "translateY(-50%)";
+      isSticky = false;
+    }
+  });
+});
 
  
   </script>
