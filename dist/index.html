@@ -1,28 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Algorithm Alley</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <section class="hero py-5 px-4">
-        <div
-          class="hero-div flex-grow border rounded-3xl overflow-hidden relative flex flex-col bg-opacity-50 bg-slate-50 h-full"
-        >
-        <div style="background-image: url(./../assets/clouds-49520_1920.jpg);  background-repeat: no-repeat; background-size: cover;">
-
-  
-          
-            <header class="absolute inset-x-0 top-0 z-50">
-              <nav
-                class="flex items-center justify-between p-3 lg:px-8"
-                aria-label="Global"
-              >
-                <div class="flex lg:flex-1">
-
 
 <head>
   <meta charset="UTF-8" />
@@ -36,7 +13,7 @@
     <section class="hero py-5 px-4">
       <div
         class="hero-div flex-grow border rounded-3xl overflow-hidden relative flex flex-col bg-opacity-50 bg-slate-50 h-full">
-        <div class="h-screen w-full bg-gradient-to-b from-indigo-400 via-indigo-300 to-indigo-200 ">          <header class="absolute inset-x-0 top-0 z-50">
+        <div class="w-full bg-gradient-to-b from-indigo-400 via-indigo-300 to-indigo-200 ">          <header class="absolute inset-x-0 top-0 z-50">
             <nav class="flex items-center justify-between p-3 lg:px-8" aria-label="Global">
               <div class="flex lg:flex-1">
                 <a href="#" class="-m-1.5 p-1.5">
@@ -77,8 +54,9 @@
               </div>
               <div>
                 <button
-                  class="btn1 absolute top-1/4 right-2.5 menu-button w-12 h-12 rounded-full bg-white bg-opacity-40 flex items-center justify-center"
-                  onclick="toggleMobileMenu()">
+                class="btn1 absolute top-1/4 right-2.5 menu-button w-12 h-12 rounded-full bg-white bg-opacity-40 flex items-center justify-center
+                        transition-transform duration-300 ease-in-out transform hover:scale-110"
+                onclick="openMobileMenu()">
                   <div
                     class="button-block relative w-18 h-14 right-3 top-3 z-30 rounded-full bg-white bg-opacity-40 flex items-center justify-center">
                     <span
@@ -100,18 +78,17 @@
             </nav>
             <!-- Mobile menu, show/hide based on menu open state. -->
             <div id="mobileMenu" class="lg:hidden" role="dialog" aria-modal="true">
-              <!-- Background backdrop, show/hide based on slide-over state. -->
               <div class="fixed inset-0 z-50"></div>
-              <div
-                class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+              <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10
+                          animate-fadeInRight">
                 <div class="flex items-center justify-between">
-
                   <a href="#" class="-m-1.5 p-1.5">
                     <span class="sr-only">Algorithm Alley</span>
                     <img class="h-8 w-auto" src="./../assets/logo.png" alt="" />
                   </a>
-                  <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                    <span class="sr-only">Close menu</span>
+                  <button type="button" class="btn2 -m-2.5 rounded-md p-2.5 text-gray-700
+              transition-transform duration-300 ease-in-out transform hover:scale-110" onclick="toggleMobileMenu()">
+  <span class="sr-only">Close menu</span>
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                       aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -132,78 +109,6 @@
                         class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact
                         Us</a>
                     </div>
-                  </button>
-                </div>
-              </nav>
-              <!-- Mobile menu, show/hide based on menu open state. -->
-              <div class="lg:hidden" role="dialog" aria-modal="true">
-                <!-- Background backdrop, show/hide based on slide-over state. -->
-                <div class="fixed inset-0 z-50"></div>
-                <div id="modalContainer"
-                  class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
-                >
-                  <div class="flex items-center justify-between">
-                    <a href="#" class="-m-1.5 p-1.5">
-                      <span class="sr-only">Algorithm Alley</span>
-                      <img
-                        class="h-8 w-auto"
-                        src="./../assets/logo.png"
-                        alt=""
-                      />
-                    </a>
-                    <button id="closeModalButton"
-                      type="button"
-                      class="-m-2.5 rounded-md p-2.5 text-gray-700"
-                    >
-                      <span class="sr-only">Close menu</span>
-                      <svg
-                        class="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="mt-6 flow-root">
-                    <div class="-my-6 divide-y divide-gray-500/10">
-                      <div class="space-y-2 py-6">
-                        <a
-                          href="#"
-                          class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                          >About Us</a
-                        >
-                        <a
-                          href="#"
-                          class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                          >Reviews</a
-                        >
-                        <a
-                          href="#"
-                          class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                          >Sessions</a
-                        >
-                        <a
-                          href="#"
-                          class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                          >Contact Us</a
-                        >
-                      </div>
-                      <div class="py-6">
-                        <a
-                          href="#"
-                          class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                          >Become a member</a
-                        >
-                      </div>
-
                     <div class="py-6">
                       <a href="#"
                         class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Become
@@ -236,10 +141,6 @@
                   </p>
                 </div>
               </div>
-              <div
-                class="col-span-1 hero-content-2 flex items-center flex-end text-right"
-                style="margin-left: 83%"
-              >
             </div>
             <div class="col-span-1 hero-content-2 flex items-center flex-end text-right" style="margin-left: 80%">
               <div class="nav-links font-bold">
@@ -268,51 +169,70 @@
     </section>
     <section class="py-8">
       <marquee width="100%" direction="left">
-        <font class="text-9xl font-extrabold text-blue-500">
+        <font class="text-9xl font-extrabold text-blue-400">
           Embracing Excellence, Empowering Innovations, and Elevating Tech Enthusiasts Worldwide.
         </font>
       </marquee>
     </section>
     <!--sessions section starts-->
-    <section class="py-8">
-      <div class="container mx-auto">
-        <h3 class="text-gray-600 text-lg md:text-xl lg:text-2xl ml-6 mt-8 mb-4 md:mb-6 font-semibold">02 - Our Sessions
-        </h3>
-        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          <li class="relative">
-            <div class="group">
-              <img src="./../assets/database-2389207_1920.png" alt="DBMS Session"
-                class="w-full h-96 transition-opacity duration-300 ease-in-out">
-              <div
-                class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-                <p class="text-white text-lg md:text-xl lg:text-2xl font-semibold">DBMS</p>
+    <section class="py-8 px-4">
+      <h2 class="text-xl text-gray-500 font-bold ml-5">02 - Our Sessions</h2>
+      <div class="ag-format-container">
+        <div class="ag-courses_box">
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                DBMS 9 hours of sessions done&#160;with handwritten notes, we do chit chat regarding this.
               </div>
-            </div>
-          </li>
-          <li class="relative">
-            <div class="group">
-              <img src="./../assets/clock-4496464_1920.png" alt="TC Session"
-                class="w-full h-auto transition-opacity duration-300 ease-in-out">
-              <div
-                class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-                <p class="text-white text-lg md:text-xl lg:text-2xl font-semibold">Time Complexity</p>
+      
+              <div class="ag-courses-item_date-box">
+                Start:
+                <span class="ag-courses-item_date">
+                  05-08-2023
+                </span>
               </div>
-            </div>
-          </li>
-          <li class="relative">
-            <div class="group">
-              <img src="./../assets/moretocome.png" alt="TC Session"
-                class="w-full h-auto transition-opacity duration-300 ease-in-out">
-              <div
-                class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-                <p class="text-white text-lg md:text-xl lg:text-2xl font-semibold">More to come...</p>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Time Complexity&#160;+ Space complexity, detailed discussions and with notes, join us
               </div>
-            </div>
-          </li>
-          <!-- Add more sessions as needed -->
-        </ul>
+      
+              <div class="ag-courses-item_date-box">
+                Start:
+                <span class="ag-courses-item_date">
+                  07.-08-2023
+                </span>
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Competitive Programming "we aim to be the best community for that"&#160;2023"
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Start:
+                <span class="ag-courses-item_date">
+                  01.08.2023
+                </span>
+              </div>
+            </a>
+          </div>
+      
+        </div>
       </div>
-    </section>
+  </section>
 
   </div>
   <script>
@@ -343,27 +263,6 @@
           // call callback after timeout
           setTimeout(fnCallback, 500);
         }
-
-        // start the text animation
-        StartTextAnimation(0);
-      });
-      //const openModalButton = document.getElementById('openModalButton');
-      const closeModalButton = document.getElementById('closeModalButton');
-      const modalContainer = document.getElementById('modalContainer'); // Get the modal container by ID
-
-      /*openModalButton.addEventListener('click', () => {
-        modalContainer.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      });*/
-
-      closeModalButton.addEventListener('click', () => {
-        modalContainer.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      });
-    </script>
-  </body>
-</html>
-
       }
       // start a typewriter animation for a text in the dataText array
       function StartTextAnimation(i) {
@@ -384,6 +283,8 @@
       // start the text animation
       StartTextAnimation(0);
     });
+
+ 
   </script>
 </body>
 
