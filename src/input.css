@@ -313,5 +313,11 @@ p {
   background-color: #232323;
 }
 
+@media (max-width: 640px) {
+  .hero-left-content {
+    display: none;
+  }
+}
+
 /* confetti */
 
