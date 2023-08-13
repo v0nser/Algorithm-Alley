@@ -9,11 +9,11 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <div class="wrapper">  
     <section class="hero py-5 px-4">
       <div
         class="hero-div flex-grow border rounded-3xl overflow-hidden relative flex flex-col bg-opacity-50 bg-slate-50 h-full">
-        <div class="h-full w-full bg-gradient-to-b from-indigo-400 via-indigo-300 to-indigo-200 "> 
+        <div class="h-full w-full bg-gradient-to-b from-orange-500 via-gray-300 to-green-700 "> 
            <header class="absolute inset-x-0 top-0 z-50">
             <nav class="flex items-center justify-between p-3 lg:px-8" aria-label="Global">
               <div class="flex lg:flex-1">
@@ -23,7 +23,7 @@
                 </a>
               </div>
               <div class="flex lg:hidden">
-                <button type="button"
+                <!-- <button type="button"
                   class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
                   <span class="sr-only">Open main menu</span>
                   <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -31,7 +31,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round"
                       d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                   </svg>
-                </button>
+                </button> -->
               </div>
               <div
                 class="hidden lg:flex lg:gap-x-12 mr-96 bg-slate-200 rounded-full place-content-center w-2/5 justify-center items-center h-12">
@@ -236,6 +236,57 @@
         </div>
       </div>
   </section>
+  <!--reviews and testimonial section starts-->
+  <section class="member-revs rounded-b-3xl py-8">
+    <h2 class="text-xl text-gray-500 font-bold ml-5">03 - Our Reviews</h2>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+  
+      <!-- here goes what customers say -->
+      <h1>Here's what <span>others</span> say:</h1>
+  
+      <!-- Full-width slides/quotes -->
+      <div class="mySlides">
+        <div class="mySlidesContainer">
+          <q>
+            Curabitur ligula augue, lobortis in interdum nec, dignissim vel arcu. Donec semper aliquet mattis. Curabitur convallis urna congue viverra elementum.
+          </q>
+        </div>
+        <p class="author">By: <span>Joe Bloggs</span></p>
+      </div>
+  
+      <div class="mySlides">
+        <div class="mySlidesContainer">
+          <q>
+            Vivamus est felis, tempor sed mauris ac, malesuada sollicitudin ipsum. Etiam nec ullamcorper nibh, ac pretium sapien. Donec pharetra sollicitudin ligula, sit amet ornare nisi vestibulum et.
+          </q>
+        </div>
+        <p class="author">By: <span>Jane Doe</span></p>
+      </div>
+  
+      <div class="mySlides">
+        <div class="mySlidesContainer">
+          <q>
+            Mauris malesuada, ex at volutpat euismod, velit diam placerat lacus, eu rhoncus enim metus ultricies nisi. Mauris pharetra tristique nisl.</q>
+        </div>
+        <p class="author">By: <span>John Doe</span></p>
+      </div>
+  
+      <!-- Next/prev buttons -->
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+  
+    </div><!-- END slidehow-container -->
+  
+    <!-- Dots/bullets/indicators -->
+    <div class="dot-container">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+  
+ </section>
 <!--footer section-->
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
@@ -292,7 +343,6 @@
     </div>
   </div>
 </footer>
-
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", function (event) {
@@ -379,8 +429,107 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+//btn1 func
+function openMobileMenu() {
+  const mobileMenu = document.getElementById("mobileMenu");
+  const overlay = document.querySelector(".fixed.inset-0.z-50");
 
- 
+  mobileMenu.classList.add("translate-x-0");
+  overlay.classList.add("bg-gray-900/50");
+}
+
+function closeMobileMenu() {
+  const mobileMenu = document.getElementById("mobileMenu");
+  const overlay = document.querySelector(".fixed.inset-0.z-50");
+
+  mobileMenu.classList.remove("translate-x-0");
+  overlay.classList.remove("bg-gray-900/50");
+}
+
+function toggleMobileMenu() {
+  const mobileMenu = document.getElementById("mobileMenu");
+  const overlay = document.querySelector(".fixed.inset-0.z-50");
+
+  if (mobileMenu.classList.contains("translate-x-0")) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
+}
+
+// Function to handle screen size change
+function handleScreenSizeChange() {
+  const mobileMenu = document.getElementById("mobileMenu");
+  const overlay = document.querySelector(".fixed.inset-0.z-50");
+
+  // If the screen width is greater than or equal to 1024px (adjust as needed)
+  if (window.innerWidth >= 1024) {
+    closeMobileMenu();
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuButton = document.querySelector(".menu-button");
+  mobileMenuButton.addEventListener("click", toggleMobileMenu);
+
+  // Add event listener for screen size change
+  window.addEventListener("resize", handleScreenSizeChange);
+
+  // Call the handleScreenSizeChange function on initial load
+  handleScreenSizeChange();
+});
+
+ //testimonial section
+ let slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
+let prev = document.querySelector(".prev");
+let next = document.querySelector(".next");
+
+if (!slides.length == 0) {
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides((slideIndex += n));
+  }
+
+  let currentSlide = function (n) {
+    showSlides((slideIndex = n));
+  };
+
+  function showSlides(n) {
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+}
+
+prev.addEventListener("click", () => {
+  plusSlides(-1);
+});
+
+next.addEventListener("click", () => {
+  plusSlides(1);
+});
+
+
+//confetti
+
   </script>
 </body>
 
