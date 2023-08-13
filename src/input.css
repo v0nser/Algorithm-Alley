@@ -160,9 +160,9 @@
 .bcm.hover-slide-right:hover a {
   color: #fff; /* New font color when hovered */
 }
-
+/*------------------------------- */
 /* become a member and btn1 ends */
-
+/*------------------------------*/
   @media only screen and (max-width: 979px) {
     .ag-courses_item {
       -ms-flex-preferred-size: calc(50% - 30px);
