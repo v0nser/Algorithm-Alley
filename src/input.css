@@ -319,5 +319,38 @@ p {
   }
 }
 
-/* confetti */
+/* btn1 */
+.dropdown{
+  position: relative;
+  display: inline-block;
+}
 
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 170px;
+  font-weight: bold;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index:1;
+  border-radius: 20%;
+  text-align: center;
+}
+
+.dropdown-content a{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropbtn:hover{
+ background-color: #2596be;
+}
+.dropdown a:hover{
+  background-color: #ddd;
+}
+
+.show{
+  display: block;
+}

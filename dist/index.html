@@ -40,11 +40,11 @@
                 </a>
               </div>
               <div class="header-actions">
-                <div class="bcm hover-slide-right relative bg-slate-200 rounded-full items-center py-2 px-4 mt-4 mr-20 lg:mt-0 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                <div class="bcm hover-slide-right relative bg-slate-200 rounded-full items-center py-2 px-4 mt-4 mr-24 lg:mt-0 transition-transform duration-300 ease-in-out transform hover:scale-110">
                   <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Become a member <span aria-hidden="true">&rarr;</span></a>
                 </div>
-              <div>
-                <button class="btn1 absolute -mt-11 ml-44 menu-button w-12 h-12 rounded-full bg-white bg-opacity-40 flex items-center justify-center transition-transform duration-300 ease-in-out transform hover:scale-110" onclick="openMobileMenu()">                  <div
+              <div class="dropdown">
+                <button class="dropbtn absolute -mt-16 ml-48 menu-button w-12 h-12 rounded-full bg-white bg-opacity-40 flex items-center justify-center transition-transform duration-300 ease-in-out transform hover:scale-110" onclick="myFunction()">                  <div
                     class="button-block relative w-18 h-14 right-3 top-3 z-30 rounded-full bg-white bg-opacity-40 flex items-center justify-center">
                     <span
                       class="absolute top-0 left-0 w-4 h-1 bg-white transition-all duration-400 ease-in-out delay-300"
@@ -61,6 +61,11 @@
                       style="border-radius: 2px; left: 1.5px; top: 32%"></span>
                   </div>
                 </button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                  </div>
               </div>
               </div>
             </nav>
@@ -128,39 +133,7 @@
     </section>
     <!--About us section starts-->
     <section class="py-8" data-aos="flip-left">
-      <h2 class="text-xl text-gray-500 font-bold ml-5">About</h2>
-
-        <div class="flex lg:flex-row flex-col justify-between gap-8 pt-12 px-8">
-            <div class="w-full lg:w-5/12 flex flex-col justify-center">
-                <h1 class="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 text-gray-500 pb-4">Our Story</h1>
-                <p class="font-normal text-base leading-6 text-gray-600 text-gray-500">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.In the first place we have granted to God, and by this our present charter confirmed for us and our heirs forever that the English Church shall be free, and shall have her rights entire, and her liberties inviolate; and we will that it be thus observed; which is apparent from</p>
-            </div>
-            <div class="w-full lg:w-8/12 lg:pt-8">
-                <div class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-4 shadow-lg rounded-md">
-                    <div class="p-4 pb-6 flex justify-center flex-col items-center">
-                        <img class="md:block hidden" src="https://i.ibb.co/FYTKDG6/Rectangle-118-2.png" alt="Alexa featured Image" />
-                        <img class="md:hidden block" src="https://i.ibb.co/zHjXqg4/Rectangle-118.png" alt="Alexa featured Image" />
-                        <p class="font-medium text-xl leading-5 text-gray-800 text-gray-500 mt-4">Alexa</p>
-                    </div>
-                    <div class="p-4 pb-6 flex justify-center flex-col items-center">
-                        <img class="md:block hidden" src="https://i.ibb.co/fGmxhVy/Rectangle-119.png" alt="Olivia featured Image" />
-                        <img class="md:hidden block" src="https://i.ibb.co/NrWKJ1M/Rectangle-119.png" alt="Olivia featured Image" />
-                        <p class="font-medium text-xl leading-5 text-gray-800 text-gray-500 mt-4">Olivia</p>
-                    </div>
-                    <div class="p-4 pb-6 flex justify-center flex-col items-center">
-                        <img class="md:block hidden" src="https://i.ibb.co/Pc6XVVC/Rectangle-120.png" alt="Liam featued Image" />
-                        <img class="md:hidden block" src="https://i.ibb.co/C5MMBcs/Rectangle-120.png" alt="Liam featued Image" />
-                        <p class="font-medium text-xl leading-5 text-gray-800 text-gray-500 mt-4">Liam</p>
-                    </div>
-                    <div class="p-4 pb-6 flex justify-center flex-col items-center">
-                        <img class="md:block hidden" src="https://i.ibb.co/7nSJPXQ/Rectangle-121.png" alt="Elijah featured image" />
-                        <img class="md:hidden block" src="https://i.ibb.co/ThZBWxH/Rectangle-121.png" alt="Elijah featured image" />
-                        <p class="font-medium text-xl leading-5 text-gray-800 text-gray-500 mt-4">Elijah</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      
     </section>
     <!--About us section ends-->
     <!--sessions section starts-->
@@ -1024,7 +997,24 @@ next.addEventListener("click", () => {
 });
 
 
-//confetti
+//btn1 dropdown
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 
   </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
