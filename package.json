@@ -15,6 +15,10 @@
   "dependencies": {
     "bootstrap": "^5.3.1",
     "bootstrap-icons": "^1.10.5",
-    "icons": "^1.0.0"
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "icons": "^1.0.0",
+    "nodemailer": "^6.9.4",
+    "path": "^0.12.7"
   }
 }

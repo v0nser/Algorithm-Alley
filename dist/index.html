@@ -69,7 +69,6 @@
               </div>
               </div>
             </nav>
-            <!-- Mobile menu, show/hide based on menu open state. -->
             
           </header>
           <div class="hero-content grid grid-cols-2 gap-8 items-center justify-center -mt-14 ml-5">
@@ -132,9 +131,70 @@
          
     </section>
     <!--About us section starts-->
-    <section class="py-8" data-aos="flip-left">
-      
-    </section>
+    <h2 class="text-xl text-gray-500 font-bold ml-5 py-8">About</h2>
+    <section class="grid-flow section-1 px-6">
+      <!--Image width and height-->
+      <div class="grid-flow intro" data-aos="fade-right">
+          <!--Smile and Heading-->
+          <div class="flexgroup section-1-heading">
+              <img src="./../assets/Smile.png" alt="">
+              <h2>WHO ARE WE?</h2>
+          </div>
+          <h1><span>Welcome to Algorithm Alley:</span> Empowering Tech Enthusiasts</h1>
+          <p>At <strong>Algorithm Alley</strong>, we're more than just a community; we're a dynamic hub of knowledge, creativity, and camaraderie. Our passion-driven initiative is dedicated to nurturing the growth of tech enthusiasts</p>
+      </div>
+      <div class="grid-flow mission" data-aos="fade-left">
+          <!--Arrow, heart and Our Mission Heading-->
+          <div class="flexgroup mission-int">
+              <img class="arrow" src="./../assets/Arrow.svg" alt="">
+              <img class="heart" src="./../assets/BigHeart.svg" alt="">
+              <h1>Our Mission</h1>
+          </div>
+          <div class="mission-div flexgroup">
+              <img class="cloud" src="./../assets/cloud-animated.png" alt="">
+              <p class="mission-des">At the heart of Algorithm Alley lies a steadfast mission – to empower individuals within the tech realm with the tools, skills, and inspiration they need to thrive. We believe that the world of technology is a boundless expanse of possibilities, and we're here to help you unlock your full potential.
+              </p>
+          </div>
+      </div>
+  </section>    
+  <!--Introduction section End-->
+
+  <section class="grid-flow section-2">
+      <h1 class="section-2-heading">What We Offer?</h1>
+      <div class="grid-flow section-2-sub"><!--grid-div-->
+          <div class="flexgroup engage-div"><!--Flex-div-->
+              <!--Learn-->
+              <div class="flexgroup engage" data-aos="flip-down">
+                  <img src="./../assets/Heart Shine.svg" alt="" >
+                  <h3>Learn</h3>
+              </div>
+              <!--Connect-->
+              <div class="flexgroup engage eng-2" data-aos="flip-down">
+                  <img src="./../assets/sec-heart.svg" alt="">
+                  <h3>Connect</h3>
+              </div>
+              <!--Inspire-->
+              <div class="flexgroup engage" data-aos="flip-down">
+                  <img src="./../assets/Heart Shine.svg" alt="">
+                  <h3>Inspire</h3>
+              </div>
+          </div>
+          <div class="flexgroup features-div"><!--Flex-Div-->
+              <div class="feature" data-aos="flip-down">
+                  <h1>Engaging Learning Sessions</h1>
+                  <p>Our meticulously crafted learning sessions cater to a diverse range of interests and skill levels</p>
+              </div>
+              <div class="feature f-2" data-aos="flip-down">
+                  <h1>Vibrant Community</h1>
+                  <p>Algorithm Alley is a thriving ecosystem of like-minded individuals who share your passion. Connect, collaborate, and engage with fellow techies.</p>
+              </div>
+              <div class="feature" data-aos="flip-down">
+                  <h1>Engaging Learning Sessions</h1>
+                  <p>Share your insights, experiences, and discoveries through our dedicated blogging feature. Coming soon...</p>
+              </div>
+          </div>
+      </div>
+  </section>
     <!--About us section ends-->
     <!--sessions section starts-->
     <section class="py-8 px-4">
@@ -207,7 +267,7 @@
       <h1>Here's what <span>others</span> say:</h1>
   
       <!-- Full-width slides/quotes -->
-      <div class="mySlides">
+      <div class="mySlides" data-aos="zoom-out-up">
         <div class="mySlidesContainer">
           <q>
             Curabitur ligula augue, lobortis in interdum nec, dignissim vel arcu. Donec semper aliquet mattis. Curabitur convallis urna congue viverra elementum.
@@ -248,7 +308,7 @@
 
   
  </section>
-
+<!--contact section starts-->
  <section class="py-5 px-6">
   <div class="text-center w-full -px-5">
    
@@ -779,29 +839,36 @@
         </svg>
       </div>
     </div>
-    <div class="">
-      <div>
-        <span class="uppercase text-sm text-gray-600 font-bold">Full Name</span>
-        <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-          type="text" placeholder="">
-      </div>
-      <div class="mt-8">
-        <span class="uppercase text-sm text-gray-600 font-bold">Email</span>
-        <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-          type="text">
-      </div>
-      <div class="mt-8">
-        <span class="uppercase text-sm text-gray-600 font-bold">Message</span>
-        <textarea
-          class="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
-      </div>
-      <div class="mt-8">
-        <button
-          class="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
-          Send Message
-        </button>
-      </div>
-    </div>
+    <div class="cont-forms">
+      <form id="contact-form" action="/send_email" method="post">
+          <div>
+              <span class="uppercase text-sm text-gray-600 font-bold">From</span>
+              <input id="from" class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                  type="email" placeholder="Your email" name="from">
+          </div>
+          <div class="mt-8">
+              <span class="uppercase text-sm text-gray-600 font-bold">To</span>
+              <input id="to" class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                  type="email" name="to" placeholder="Receiver's Email">
+          </div>
+          <div class="mt-8">
+            <span class="uppercase text-sm text-gray-600 font-bold">Subject</span>
+            <input id="subject" class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="text" name="subject" placeholder="Subject">
+        </div>
+          <div class="mt-8">
+              <span class="uppercase text-sm text-gray-600 font-bold">Message</span>
+              <textarea id="message" name="yourmessage" placeholder="yourmessage"
+                  class="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
+          </div>
+          <div class="mt-8">
+            <button type="button" id="send-button"
+                class="contact-form-btn uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline" value="Send">
+                Send Message
+            </button>
+        </div>
+      </form>
+  </div>
   </div>
  </section>
 <!--footer section-->
@@ -1016,11 +1083,18 @@ window.onclick = function(event) {
   }
 }
 
+//nodemailer
+
+
   </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
+
+
+
+
 </body>
 
 </html>
