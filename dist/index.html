@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="icon" type="image/x-icon" href="./../assets/logo.png">
+  <link rel="icon" type="image/x-icon" href="/assets/logo.png">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <title>Algorithm Alley</title>
 </head>
@@ -22,7 +22,7 @@
               <div class="flex lg:flex-1">
                 <a href="#" class="-m-1.5 p-1.5">
                   <span class="sr-only">Algorithm Alley</span>
-                  <img class="h-20" src="./../assets/logo.png" alt="" />
+                  <img class="h-20" src="/assets/logo.png" alt="" />
                 </a>
               </div>
 
@@ -152,7 +152,7 @@
       <div class="grid-flow intro" data-aos="fade-right">
           <!--Smile and Heading-->
           <div class="flexgroup section-1-heading">
-              <img src="./../assets/Smile.png" alt="">
+              <img src="/assets/Smile.png" alt="">
               <h2>WHO ARE WE?</h2>
           </div>
           <h1><span>Welcome to Algorithm Alley:</span> Empowering Tech Enthusiasts</h1>
@@ -161,12 +161,12 @@
       <div class="grid-flow mission" data-aos="fade-left">
           <!--Arrow, heart and Our Mission Heading-->
           <div class="flexgroup mission-int">
-              <img class="arrow" src="./../assets/Arrow.svg" alt="">
-              <img class="heart" src="./../assets/BigHeart.svg" alt="">
+              <img class="arrow" src="/assets/Arrow.svg" alt="">
+              <img class="heart" src="/assets/BigHeart.svg" alt="">
               <h1>Our Mission</h1>
           </div>
           <div class="mission-div flexgroup">
-              <img class="cloud" src="./../assets/cloud-animated.png" alt="">
+              <img class="cloud" src="/assets/cloud-animated.png" alt="">
               <p class="mission-des">At the heart of Algorithm Alley lies a steadfast mission – to empower individuals within the tech realm with the tools, skills, and inspiration they need to thrive. We believe that the world of technology is a boundless expanse of possibilities, and we're here to help you unlock your full potential.
               </p>
           </div>
@@ -180,17 +180,17 @@
           <div class="flexgroup engage-div"><!--Flex-div-->
               <!--Learn-->
               <div class="flexgroup engage" data-aos="flip-down">
-                  <img src="./../assets/Heart Shine.svg" alt="" >
+                  <img src="/assets/Heart Shine.svg" alt="" >
                   <h3>Learn</h3>
               </div>
               <!--Connect-->
               <div class="flexgroup engage eng-2" data-aos="flip-down">
-                  <img src="./../assets/sec-heart.svg" alt="">
+                  <img src="/assets/sec-heart.svg" alt="">
                   <h3>Connect</h3>
               </div>
               <!--Inspire-->
               <div class="flexgroup engage" data-aos="flip-down">
-                  <img src="./../assets/Heart Shine.svg" alt="">
+                  <img src="/assets/Heart Shine.svg" alt="">
                   <h3>Inspire</h3>
               </div>
           </div>
@@ -367,7 +367,7 @@
       <div class="flex flex-col items-start space-y-2">
         <a href="#" class="-m-1.5 p-1.5">
           <span class="sr-only">Algorithm Alley</span>
-          <img class="h-20" src="./../assets/logo.png" alt="" />
+          <img class="h-20" src="/assets/logo.png" alt="" />
         </a>
         <p class="text-3xl font-bold text-gray-700">We would love to hear from you.</p>
         <p class="text-gray-600">Feel free to reach out to the community, if you have any questions.</p>
@@ -618,49 +618,6 @@ function sendMail(){
     <script>
       AOS.init();
     </script>
-<!--email js-->
-<!-- <script>
-  const contactForm = document.querySelector("#cont-form");
-  const submitBtn = document.querySelector(".submit-btn");
-  const nameInput = document.querySelector("#user_name");
-  const emailInput = document.querySelector("#user_email");
-  const messageInput= document.querySelector("#message");
-  //get needed data from email js
-  const publicKey= "iYwseldxrRCh6SbQz";
-  const serviceId= "service_udfc48m";
-  const templateID= "template_zha295g";
-  emailjs.init(publicKey);
-
-  //Add submit event to the form
-  contactForm.addEventListener("submit", e => {
-    //Prevent default behaviour of submitting a form
-    e.preventDefault();
-    //Change button text
-    submitBtn.innerText = "Just A Moment...";
-    //Get all input field values
-    const inputFields = {
-      name: nameInput.value,
-      email: emailInput.value,
-      message: messageInput.value
-    }
-    emailjs.send(serviceID, templateID, inputFields)
-      .then(()=>{
-        submitBtn.innerText = "Message Sent Successfully";
-        //clear out all input fields
-        nameInput.value="";
-        emailInput.value="";
-        messageInput.value="";
-      },(error) => {
-        console.log(error);
-        submitBtn.innerText = "Something went wrong";
-      });
-  });
-</script> -->
-
-
-
-
-
 </body>
 
 </html>
