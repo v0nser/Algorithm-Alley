@@ -24,6 +24,17 @@
                 </a>
               </div>
 
+              <div class="flex lg:hidden">
+                <button type="button"
+                  class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                    aria-hidden="true">
+                    <!--<path stroke-linecap="round" stroke-linejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />-->
+                  </svg>
+                </button>
+              </div>
               <div
                 class="hidden lg:flex lg:gap-x-12 mr-96 bg-slate-200 rounded-full place-content-center w-2/5 justify-center items-center h-12">
                 <a href="#section-01" class="text-sm font-semibold leading-6 text-gray-900 link-animation">
@@ -996,7 +1007,12 @@ function animateDots() {
 animateDots();
 
 
-//back to top
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('hidden'); // Add the 'hidden' class to show/hide the menu
+  }
+
+//back to to
 function backToTop() {
   // Smoothly scroll back to the top of the page
   window.scrollTo({
@@ -1004,8 +1020,6 @@ function backToTop() {
     behavior: 'smooth'
   });
 }
-
-
 
 //bcm and btn1 class
 document.addEventListener("DOMContentLoaded", function () {
